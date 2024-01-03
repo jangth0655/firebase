@@ -3,6 +3,7 @@
 import { auth } from '@/firebase';
 import { FirebaseError } from 'firebase/app';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
@@ -87,6 +88,9 @@ export default function Login() {
         </button>
       </form>
       {error && error !== '' && <span className="text-red-500 font-semibold mt-6">{error}</span>}
+      <div>
+        <Link href={'/create-account'}>Do not have an account?</Link>
+      </div>
     </div>
   );
 }
